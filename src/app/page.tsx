@@ -1,55 +1,24 @@
 import React from "react";
-import {
-  Heart,
-  MapPin,
-  Phone,
-  Clock,
-  Scissors,
-  Syringe,
-  Stethoscope,
-  Bath,
-} from "lucide-react";
+import { MapPin, Phone, Clock } from "lucide-react";
 import Header from "./components/header";
 import Hero from "./components/hero";
+import Image from "next/image";
+import Services from "./components/services";
 
 function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navigation - Added sticky positioning */}
+
       <Header></Header>
 
       {/* Hero Section */}
+
       <Hero></Hero>
+
       {/* Services Section */}
-      <div id="services" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-            Nossos Serviços
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <ServiceCard
-              icon={<Stethoscope className="h-8 w-8" />}
-              title="Consultas"
-              description="Atendimento veterinário completo"
-            />
-            <ServiceCard
-              icon={<Scissors className="h-8 w-8" />}
-              title="Banho e Tosa"
-              description="Cuidados com a higiene do seu pet"
-            />
-            <ServiceCard
-              icon={<Syringe className="h-8 w-8" />}
-              title="Vacinação"
-              description="Proteção e prevenção"
-            />
-            <ServiceCard
-              icon={<Bath className="h-8 w-8" />}
-              title="Pet Shop"
-              description="Produtos e acessórios"
-            />
-          </div>
-        </div>
-      </div>
+
+      <Services></Services>
 
       {/* About Section */}
       <div id="about" className="py-16 bg-purple-50">
@@ -77,10 +46,11 @@ function App() {
               <div className="mt-8 space-y-6">
                 <ContactInfo
                   icon={<MapPin />}
-                  text="Rua dos Pets, 123 - Centro"
+                  text="Rua João Arantes, 341 - Cidade Nova, Belo Horizonte, Brasil"
                 />
-                <ContactInfo icon={<Phone />} text="(11) 99999-9999" />
-                <ContactInfo icon={<Clock />} text="Seg-Sáb: 8h às 19h" />
+                <ContactInfo icon={<Phone />} text="(31) 9530-6014" />
+                <ContactInfo icon={<Clock />} text="Seg-Sex: 9h às 18h" />
+                <ContactInfo icon={<Clock />} text="Sab: 9h às 12h" />
               </div>
             </div>
             <div className="mt-10 lg:mt-0 lg:w-1/2">
@@ -115,37 +85,21 @@ function App() {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="flex items-center">
-              <Heart className="h-8 w-8 text-purple-400" />
-              <span className="ml-2 text-xl font-semibold">
-                Império dos Pets
-              </span>
+              <Image
+                src="/logo.png"
+                alt="Império dos Pets"
+                width={150}
+                height={150}
+              />
             </div>
             <div className="mt-4 md:mt-0">
-              <p>&copy; 2024 Império dos Pets. Todos os direitos reservados.</p>
+              <p>&copy; 2025 Império dos Pets. Todos os direitos reservados.</p>
             </div>
           </div>
         </div>
       </footer>
-    </div>
-  );
-}
-
-function ServiceCard({
-  icon,
-  title,
-  description,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-      <div className="text-purple-600 mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
     </div>
   );
 }

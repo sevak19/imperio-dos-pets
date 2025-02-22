@@ -7,7 +7,7 @@ const Header = () => {
         e.preventDefault();
         const element = document.getElementById(sectionId);
         if (element) {
-          const headerOffset = 64; // This matches our header height of 4rem (64px)
+          const headerOffset = 112; // This matches our header height of 4rem (64px)
           const elementPosition = element.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
     

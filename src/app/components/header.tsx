@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart } from "lucide-react";
+import Image from "next/image";
 
 const Header = () => {
     const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
@@ -21,14 +21,11 @@ const Header = () => {
   return (
     <nav className="bg-gradient-to-r from-customWhite to-customGreen shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+        <div className="flex justify-between h-28 items-center">
           <div className="flex items-center">
-            <Heart className="h-8 w-8 text-purple-600" />
-            <span className="ml-2 text-xl font-semibold text-gray-900">
-              Império dos Pets
-            </span>
+            <Image src="/logo.png" alt="Logo" width={150} height={150}/>
           </div>
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 text-lg font-semibold">
             <a
               href="#home"
               onClick={(e) => scrollToSection(e, "home")}

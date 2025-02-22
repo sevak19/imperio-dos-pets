@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image";
+
 const Hero = () => {
     const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
         e.preventDefault();
@@ -39,10 +41,10 @@ const Hero = () => {
               </div>
             </div>
             <div className="mt-10 lg:mt-0 lg:w-1/2">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1587764379873-97837921fd44?auto=format&fit=crop&w=800"
                 alt="Happy dog"
-                className="rounded-lg shadow-xl"
+                className="rounded-lg shadow-xl"  width={500} height={300}
               />
             </div>
           </div>

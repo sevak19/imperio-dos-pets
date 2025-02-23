@@ -117,7 +117,7 @@ function App() {
                 <input
                   type="text"
                   name="numero"
-                  placeholder="Número"
+                  placeholder="Telefone de contato"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 text-black"
                 />
                 <textarea

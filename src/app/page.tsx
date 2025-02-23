@@ -7,9 +7,18 @@ import Hero from "./components/hero";
 import Services from "./components/services";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
+    setIsLoading(true);
+
+    const inputname = document.querySelector('input[name="name"]') as HTMLInputElement;
+    const inputemail = document.querySelector('input[name="email"]') as HTMLInputElement;
+    const inputnumero = document.querySelector('input[name="numero"]') as HTMLInputElement;
+    const inputmessage = document.querySelector('textarea[name="message"]') as HTMLTextAreaElement;
+
     const formData = new FormData(e.target as HTMLFormElement);
     const data = Object.fromEntries(formData.entries());
   
@@ -17,6 +26,7 @@ function App() {
     const formDataConverted = {
       nome: data.name,
       email: data.email,
+      numero: data.numero,
       mensagem: data.message,
     };
   
@@ -33,8 +43,16 @@ function App() {
   
       const result = await response.json();
       console.log("Result: ", result);
+      if(result) {
+        inputname.value = "";
+        inputemail.value = "";
+        inputnumero.value = "";
+        inputmessage.value = "";
+      }
     } catch (error) {
       console.error("Error submitting form: ", error);
+    } finally {
+      setIsLoading(false);  // Desativa o carregamento
     }
   };
 
@@ -88,25 +106,36 @@ function App() {
                   type="text"
                   name="name"
                   placeholder="Nome"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 text-black"
                 />
                 <input
                   type="email"
                   name="email"
                   placeholder="Email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 text-black"
+                />
+                <input
+                  type="text"
+                  name="numero"
+                  placeholder="Número"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 text-black"
                 />
                 <textarea
                   name="message"
                   placeholder="Mensagem"
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 text-black"
                 />
                 <button
                   type="submit"
-                  className="w-full bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors"
+                  className={`w-full ${isLoading ? 'bg-gray-400 cursor-not-allowed' : 'bg-purple-600'} text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors`}
+                  disabled={isLoading}  // Desativa o botão quando está enviando
                 >
-                  Enviar Mensagem
+                  {isLoading ? (
+                    <span>Enviando...</span>  // Mensagem de loading
+                  ) : (
+                    "Enviar Mensagem"
+                  )}
                 </button>
               </form>
             </div>

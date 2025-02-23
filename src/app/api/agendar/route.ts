@@ -4,7 +4,7 @@ import nodemailer from "nodemailer";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { nome, email, mensagem } = body;
+    const { nome, email, numero, mensagem } = body;
 
     // Configuração do transporte de e-mail
     const transporter = nodemailer.createTransport({
@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       from: "seu-email@gmail.com", // O e-mail do remetente
       to: "bernardomasca3008@gmail.com", // O seu e-mail (destinatário)
       subject: "Novo Agendamento",
-      text: `Nome: ${nome}\nEmail: ${email}\nMensagem: ${mensagem}`,
+      text: `Nome: ${nome}\nEmail: ${email}\nNumero: ${numero}\nMensagem: ${mensagem}`,
     };
     
 

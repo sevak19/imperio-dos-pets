@@ -1,24 +1,53 @@
-import React from "react";
+"use client"; // Adicione essa linha no início do arquivo
+
+import React, { useState } from "react";
 import { MapPin, Phone, Clock } from "lucide-react";
 import Header from "./components/header";
 import Hero from "./components/hero";
-import Image from "next/image";
 import Services from "./components/services";
 
 function App() {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+  
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData.entries());
+  
+    // Transforme os dados antes de enviá-los para a API
+    const formDataConverted = {
+      nome: data.name,
+      email: data.email,
+      mensagem: data.message,
+    };
+  
+    console.log("Form Data: ", formDataConverted); // Verifique no console
+  
+    try {
+      const response = await fetch("/api/agendar", {
+        method: "POST",
+        body: JSON.stringify(formDataConverted),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+  
+      const result = await response.json();
+      console.log("Result: ", result);
+    } catch (error) {
+      console.error("Error submitting form: ", error);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navigation - Added sticky positioning */}
-
-      <Header></Header>
+      <Header />
 
       {/* Hero Section */}
-
-      <Hero></Hero>
+      <Hero />
 
       {/* Services Section */}
-
-      <Services></Services>
+      <Services />
 
       {/* About Section */}
       <div id="about" className="py-16 bg-purple-50">
@@ -54,18 +83,21 @@ function App() {
               </div>
             </div>
             <div className="mt-10 lg:mt-0 lg:w-1/2">
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <input
                   type="text"
+                  name="name"
                   placeholder="Nome"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
                 />
                 <input
                   type="email"
+                  name="email"
                   placeholder="Email"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
                 />
                 <textarea
+                  name="message"
                   placeholder="Mensagem"
                   rows={4}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
@@ -87,7 +119,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="flex items-center">
-              <Image
+              <img
                 src="/logo.png"
                 alt="Império dos Pets"
                 width={150}

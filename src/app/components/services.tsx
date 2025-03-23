@@ -1,5 +1,6 @@
 import React from "react";
-import { Scissors, Syringe, Stethoscope, Bath } from "lucide-react";
+import { Scissors, Syringe, Stethoscope, Bath, HeartPulse } from "lucide-react";
+import { LiaToothSolid } from "react-icons/lia";
 
 const Services = () => {
   return (
@@ -28,6 +29,16 @@ const Services = () => {
             icon={<Bath className="h-8 w-8" />}
             title="Pet Shop"
             description="Produtos e acessórios"
+          />
+          <ServiceCard
+            icon={<LiaToothSolid className="h-8 w-8" />}
+            title="Tartarectomia"
+            description="Limpeza e higiene dentária do seu pet"
+          />
+          <ServiceCard
+            icon={<HeartPulse className="h-8 w-8" />}
+            title="Cirurgia"
+            description="Cuidados com a saúde do seu pet"
           />
         </div>
       </div>

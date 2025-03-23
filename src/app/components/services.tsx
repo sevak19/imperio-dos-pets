@@ -11,10 +11,11 @@ const Services = () => {
     title: string;
     description: string;
     wpplink: string;
+    img: string;
   } | null>(null);
 
-  const openModal = (title: string, description: string, wpplink: string) => {
-    setModalContent({ title, description, wpplink });
+  const openModal = (title: string, description: string, wpplink: string, img: string) => {
+    setModalContent({ title, description, wpplink, img });
     setIsModalOpen(true);
   };
 
@@ -36,6 +37,7 @@ const Services = () => {
             description="Atendimento personalizado para diagnósticos precisos e tratamentos eficazes."
             openModal={openModal}
             wpplink="https://wa.me/5531994947303?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta."
+            img="/dog1.png"
           />
           <ServiceCard
             icon={<Scissors className="h-8 w-8" />}
@@ -43,6 +45,7 @@ const Services = () => {
             description="Cuidados estéticos e higiênicos para deixar seu pet sempre bonito e confortável."
             openModal={openModal}
             wpplink="https://wa.me/5531994947303?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Banho%20e%20Tosa."
+            img="/cat1.png"
           />
           <ServiceCard
             icon={<Syringe className="h-8 w-8" />}
@@ -50,6 +53,7 @@ const Services = () => {
             description="Proteção completa para prevenir doenças e manter seu pet saudável."
             openModal={openModal}
             wpplink="https://wa.me/5531994947303?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Vacinação."
+            img="/dog2.png"
           />
           <ServiceCard
             icon={<Bath className="h-8 w-8" />}
@@ -57,6 +61,7 @@ const Services = () => {
             description="Produtos e acessórios"
             openModal={openModal}
             wpplink="https://wa.me/5531994947303?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20Produtos%20e%20Acessórios."
+            img="/cat2.png"
           />
           <ServiceCard
             icon={<LiaToothSolid className="h-8 w-8" />}
@@ -64,6 +69,7 @@ const Services = () => {
             description="Limpeza e higiene dentária do seu pet"
             openModal={openModal}
             wpplink="https://wa.me/5531994947303?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Tartarectomia."
+            img="/dog3.png"
           />
           <ServiceCard
             icon={<HeartPulse className="h-8 w-8" />}
@@ -71,6 +77,7 @@ const Services = () => {
             description="Procedimentos cirúrgicos seguros e realizados por profissionais experientes."
             openModal={openModal}
             wpplink="https://wa.me/5531994947303?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20Procedimentos%20Cirúrgicos."
+            img="/cat3.png"
           />
         </div>
       </div>
@@ -80,6 +87,7 @@ const Services = () => {
           title={modalContent.title}
           description={modalContent.description}
           wpplink={modalContent.wpplink}
+          img={modalContent.img}
           closeModal={closeModal}
         />
       )}

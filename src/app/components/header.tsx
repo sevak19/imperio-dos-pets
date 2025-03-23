@@ -1,5 +1,7 @@
 "use client";
 
+import { InstagramLogo, TiktokLogo, ThreadsLogo } from "@phosphor-icons/react";
+
 import Image from "next/image";
 
 const Header = () => {
@@ -53,6 +55,15 @@ const Header = () => {
               className="text-gray-700 hover:text-purple-600"
             >
               Contato
+            </a>
+            <a href="https://www.instagram.com/clinicaimperiodospets" target="_blank" rel="noopener noreferrer">
+              <InstagramLogo className="w-7 h-7 text-purple-500 hover:text-purple-600 transition" />
+            </a>
+            <a href="https://www.threads.net/@clinicaimperiodospets?xmt=AQGzhw9JpXcIAOqozTJ_9O7LDv3qi-ZZZWn2lBf4Mkiq-tk" target="_blank" rel="noopener noreferrer">
+              <ThreadsLogo className="w-7 h-7 text-purple-500 hover:text-purple-600 transition" />
+            </a>
+            <a href="https://www.tiktok.com/@clinicaimperiodospets?lang=pt-BR" target="_blank" rel="noopener noreferrer">
+              <TiktokLogo className="w-7 h-7 text-purple-500 hover:text-purple-600 transition" />
             </a>
           </div>
         </div>

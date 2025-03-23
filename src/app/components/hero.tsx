@@ -42,8 +42,8 @@ const Hero = () => {
             </div>
             <div className="mt-10 lg:mt-0 lg:w-1/2">
               <Image
-                src="https://images.unsplash.com/photo-1587764379873-97837921fd44?auto=format&fit=crop&w=800"
-                alt="Happy dog"
+                src="/hero.jpg"
+                alt="Happy dog & cat"
                 className="rounded-lg shadow-xl"  width={500} height={300}
               />
             </div>

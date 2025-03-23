@@ -5,6 +5,7 @@ import { MapPin, Phone, Clock } from "lucide-react";
 import Header from "./components/header";
 import Hero from "./components/hero";
 import Services from "./components/services";
+import AboutUs from "./components/about";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -68,19 +69,7 @@ function App() {
       <Services />
 
       {/* About Section */}
-      <div id="about" className="py-16 bg-purple-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
-            Sobre Nós
-          </h2>
-          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto">
-            Com mais de 10 anos de experiência, o Império dos Pets se dedica a
-            oferecer o melhor cuidado para seu animal de estimação. Nossa equipe
-            de profissionais qualificados está sempre pronta para atender você e
-            seu pet com todo o carinho e atenção que merecem.
-          </p>
-        </div>
-      </div>
+      <AboutUs />
 
       {/* Contact Section */}
       <div id="contact" className="bg-gray-50 py-16">

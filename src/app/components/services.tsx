@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Scissors, Syringe, Stethoscope, Bath, HeartPulse } from "lucide-react";
+import { Scissors, Syringe, Stethoscope, Bath, HeartPulse, BriefcaseMedical, House} from "lucide-react";
 import { LiaToothSolid } from "react-icons/lia";
 import Modal from "./modal";
 import ServiceCard from "./ServiceCard";
@@ -58,7 +58,7 @@ const Services = () => {
           <ServiceCard
             icon={<Bath className="h-8 w-8" />}
             title="Pet Shop"
-            description="Produtos e acessórios"
+            description="Produtos e acessórios."
             openModal={openModal}
             wpplink="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20Produtos%20e%20Acessórios."
             img="/cat2.png"
@@ -66,7 +66,7 @@ const Services = () => {
           <ServiceCard
             icon={<LiaToothSolid className="h-8 w-8" />}
             title="Tartarectomia"
-            description="Limpeza e higiene dentária do seu pet"
+            description="Limpeza e higiene dentária do seu pet."
             openModal={openModal}
             wpplink="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Tartarectomia."
             img="/dog3.png"
@@ -78,6 +78,22 @@ const Services = () => {
             openModal={openModal}
             wpplink="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20Procedimentos%20Cirúrgicos."
             img="/cat3.png"
+          />
+          <ServiceCard
+            icon={<House className="h-8 w-8" />}
+            title="Creche"
+            description="Cuidado, diversão e socialização para o seu cãozinho."
+            openModal={openModal}
+            wpplink="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Creche."
+            img="/dog4.png"
+          />
+          <ServiceCard
+            icon={<BriefcaseMedical className="h-8 w-8" />}
+            title="Farmácia Pet"
+            description="Medicamentos e suplementos de qualidade para a saúde do seu pet."
+            openModal={openModal}
+            wpplink="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Farmácia%20Pet."
+            img="/cat4.png"
           />
         </div>
       </div>

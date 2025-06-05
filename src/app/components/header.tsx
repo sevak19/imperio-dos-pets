@@ -68,14 +68,28 @@ const Header = () => {
             >
               Contato
             </a>
-            <a href="https://www.instagram.com/clinicaimperiodospets" target="_blank" rel="noopener noreferrer">
-              <InstagramLogo className="w-7 h-7 text-purple-500 hover:text-purple-600 transition" />
+            <a
+              href="https://www.instagram.com/clinicaimperiodospets"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              <InstagramLogo className="w-7 h-7 text-purple-500 hover:text-purple-600 transition-transform duration-300 transform hover:scale-110" />
             </a>
-            <a href="https://www.threads.net/@clinicaimperiodospets?xmt=AQGzhw9JpXcIAOqozTJ_9O7LDv3qi-ZZZWn2lBf4Mkiq-tk" target="_blank" rel="noopener noreferrer">
-              <ThreadsLogo className="w-7 h-7 text-purple-500 hover:text-purple-600 transition" />
+
+            <a
+              href="https://www.threads.net/@clinicaimperiodospets?xmt=AQGzhw9JpXcIAOqozTJ_9O7LDv3qi-ZZZWn2lBf4Mkiq-tk"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ThreadsLogo className="w-7 h-7 text-purple-500 hover:text-purple-600 transition-transform duration-300 transform hover:scale-110" />
             </a>
-            <a href="https://www.tiktok.com/@clinicaimperiodospets?lang=pt-BR" target="_blank" rel="noopener noreferrer">
-              <TiktokLogo className="w-7 h-7 text-purple-500 hover:text-purple-600 transition" />
+
+            <a
+              href="https://www.tiktok.com/@clinicaimperiodospets?lang=pt-BR"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TiktokLogo className="w-7 h-7 text-purple-500 hover:text-purple-600 transition-transform duration-300 transform hover:scale-110" />
             </a>
           </div>
         </div>

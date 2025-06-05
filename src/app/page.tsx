@@ -135,13 +135,14 @@ function App() {
 
       {/* Botão flutuante do WhatsApp */}
         <a
-        href="https://wa.me/5531994947303?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta."
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-4 right-4 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition"
-      >
-      <img src="/whatsapp.png" alt="WhatsApp" className="w-12 h-12" />
-      </a>
+          href="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-4 right-4 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition-transform duration-300 ease-in-out hover:scale-110"
+        >
+          <img src="/whatsapp.png" alt="WhatsApp" className="w-12 h-12" />
+        </a>
+
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">

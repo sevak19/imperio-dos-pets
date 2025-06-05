@@ -25,7 +25,19 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-28 items-center">
           <div className="flex items-center">
-            <Image src="/logo.png" alt="Logo" width={150} height={150}/>
+            <a
+              href="#home"
+              onClick={(e) => scrollToSection(e, "home")}
+              className="text-gray-700 hover:text-purple-600"
+            >
+              <Image
+                src="/logo.png"
+                alt="Logo"
+                width={150}
+                height={150}
+                className="transition-transform duration-300 ease-in-out hover:scale-110"
+              />
+          </a>
           </div>
           <div className="hidden md:flex space-x-8 text-lg font-semibold">
             <a

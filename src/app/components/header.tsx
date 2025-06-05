@@ -61,6 +61,15 @@ const Header = () => {
             >
               Sobre
             </a>
+
+            <a
+              href="#gallery"
+              onClick={(e) => scrollToSection(e, "gallery")}
+              className="text-gray-600 hover:text-purple-600 transition-colors"
+            >
+              Galeria
+            </a>
+
             <a
               href="#contact"
               onClick={(e) => scrollToSection(e, "contact")}

@@ -6,6 +6,9 @@ import Header from "./components/header";
 import Hero from "./components/hero";
 import Services from "./components/services";
 import AboutUs from "./components/about";
+import Gallery from "./components/gallery";
+import GradientSeparator from "./components/GradientSeparator";
+
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -70,6 +73,11 @@ function App() {
 
       {/* About Section */}
       <AboutUs />
+
+      <GradientSeparator />
+
+      {/* Gallery Section */}
+      <Gallery />
 
       {/* Contact Section */}
       <div id="contact" className="bg-gray-50 py-16">

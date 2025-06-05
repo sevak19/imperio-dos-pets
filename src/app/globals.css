@@ -19,3 +19,27 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Aumenta o espaçamento dos pontinhos abaixo da imagem */
+.swiper-pagination {
+  bottom: -20px !important;
+}
+
+/* Ajusta o espaçamento dos pontinhos de paginação */
+.swiper-pagination {
+  bottom: -20px !important;
+}
+
+/* Centraliza o botão no meio verticalmente */
+.swiper-button-next,
+.swiper-button-prev {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Estiliza as setas: cor roxa e tamanho menor */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+  color: #007AFF !important; /* ← Aqui define a cor da seta */
+}

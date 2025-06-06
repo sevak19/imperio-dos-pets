@@ -1,3 +1,5 @@
+import BotaoTireDuvidas from "@/app/components/BotaoTireDuvidas";
+
 const AboutUs = () => {
   return (
     <div id="about" className="py-16 bg-gray-50">
@@ -20,15 +22,8 @@ const AboutUs = () => {
             </p>
 
             {/* Botão */}
-            <a
-              href="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20tirar%20uma%20dúvida."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors mt-4"
-            >
-              Tire suas dúvidas aqui
-            </a>
-
+            <BotaoTireDuvidas />
+            
           </div>
         </div>
       </div>

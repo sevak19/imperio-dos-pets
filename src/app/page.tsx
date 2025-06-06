@@ -8,6 +8,7 @@ import Services from "./components/services";
 import AboutUs from "./components/about";
 import Gallery from "./components/gallery";
 import GradientSeparator from "./components/GradientSeparator";
+import FormularioContato from "@/app/components/FormularioContato";
 
 
 function App() {
@@ -98,43 +99,7 @@ function App() {
               </div>
             </div>
             <div className="mt-10 lg:mt-0 lg:w-1/2">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Nome"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 text-black"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 text-black"
-                />
-                <input
-                  type="text"
-                  name="numero"
-                  placeholder="Telefone de contato"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 text-black"
-                />
-                <textarea
-                  name="message"
-                  placeholder="Mensagem"
-                  rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500 text-black"
-                />
-                <button
-                  type="submit"
-                  className={`w-full ${isLoading ? 'bg-gray-400 cursor-not-allowed' : 'bg-purple-600'} text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors`}
-                  disabled={isLoading}  // Desativa o botão quando está enviando
-                >
-                  {isLoading ? (
-                    <span>Enviando...</span>  // Mensagem de loading
-                  ) : (
-                    "Enviar Mensagem"
-                  )}
-                </button>
-              </form>
+              <FormularioContato />
             </div>
           </div>
         </div>

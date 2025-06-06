@@ -1,6 +1,8 @@
 "use client"
 
 import Image from "next/image";
+import BotaoAgendamento from "@/app/components/BotaoAgendamento"
+
 
 const Hero = () => {
     const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
@@ -31,13 +33,7 @@ const Hero = () => {
                 Cuidamos do seu pet com todo amor e carinho que ele merece.
               </p>
               <div className="mt-8">
-                <a
-                  href="#contact"
-                  onClick={(e) => scrollToSection(e, "contact")}
-                  className="bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700 transition-colors"
-                >
-                  Agende uma Consulta
-                </a>
+                <BotaoAgendamento />
               </div>
             </div>
             <div className="mt-10 lg:mt-0 lg:w-1/2">

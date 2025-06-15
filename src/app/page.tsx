@@ -1,18 +1,28 @@
-"use client"; // Adicione essa linha no início do arquivo
+"use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MapPin, Phone, Clock } from "lucide-react";
 import Header from "./components/header";
 import Hero from "./components/hero";
 import Services from "./components/services";
 import AboutUs from "./components/about";
 import Gallery from "./components/gallery";
-import GradientSeparator from "./components/GradientSeparator";
-import FormularioContato from "@/app/components/FormularioContato";
 
+import FormularioContato from "@/app/components/FormularioContato";
+import PromoModal from "./components/PromoModal"; 
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
+  const [showPromo, setShowPromo] = useState(false);       
+  const [minimized, setMinimized] = useState(false);       
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPromo(true); // Abre o modal após 3 segundos
+    }, 7000);
+
+    return () => clearTimeout(timer); // Limpa o timer ao desmontar
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,17 +36,14 @@ function App() {
 
     const formData = new FormData(e.target as HTMLFormElement);
     const data = Object.fromEntries(formData.entries());
-  
-    // Transforme os dados antes de enviá-los para a API
+
     const formDataConverted = {
       nome: data.name,
       email: data.email,
       numero: data.numero,
       mensagem: data.message,
     };
-  
-    console.log("Form Data: ", formDataConverted); // Verifique no console
-  
+
     try {
       const response = await fetch("/api/agendar", {
         method: "POST",
@@ -45,10 +52,9 @@ function App() {
           "Content-Type": "application/json",
         },
       });
-  
+
       const result = await response.json();
-      console.log("Result: ", result);
-      if(result) {
+      if (result) {
         inputname.value = "";
         inputemail.value = "";
         inputnumero.value = "";
@@ -57,13 +63,45 @@ function App() {
     } catch (error) {
       console.error("Error submitting form: ", error);
     } finally {
-      setIsLoading(false);  // Desativa o carregamento
+      setIsLoading(false);
     }
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navigation - Added sticky positioning */}
+      {/* Promo Modal */}
+      {showPromo && (
+        <PromoModal
+          onClose={() => {
+            setShowPromo(false);
+            setMinimized(true);
+          }}
+          onWhatsApp={() => {
+            window.open("https://wa.me/553195306014?text=Olá,%20quero%20ver%20as%20promoções!", "_blank");
+            setShowPromo(false);
+            setMinimized(true);
+          }}
+        />
+      )}
+
+      {/* Botão flutuante para reabrir o modal */}
+      {minimized && !showPromo && (
+      <button
+        onClick={() => {
+        setShowPromo(true);
+        setMinimized(false);
+      }}
+      className="fixed bottom-4 left-8 p-2 rounded-full hover:scale-110 transition-transform duration-300 z-50"
+      >
+      <img
+        src="/promo-icon.png"
+        alt="Promoção"
+        className="w-20 h-20 animate-bounce"
+      />
+    </button>
+)}
+
+      {/* Navigation */}
       <Header />
 
       {/* Hero Section */}
@@ -75,7 +113,7 @@ function App() {
       {/* About Section */}
       <AboutUs />
 
-      <GradientSeparator />
+      
 
       {/* Gallery Section */}
       <Gallery />
@@ -105,29 +143,22 @@ function App() {
         </div>
       </div>
 
-
       {/* Botão flutuante do WhatsApp */}
-        <a
-          href="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="fixed bottom-4 right-4 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition-transform duration-300 ease-in-out hover:scale-110"
-        >
-          <img src="/whatsapp.png" alt="WhatsApp" className="w-12 h-12" />
-        </a>
-
+      <a
+        href="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-4 right-4 bg-green-500 p-3 rounded-full shadow-lg hover:bg-green-600 transition-transform duration-300 ease-in-out hover:scale-110"
+      >
+        <img src="/whatsapp.png" alt="WhatsApp" className="w-12 h-12" />
+      </a>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="flex items-center">
-              <img
-                src="/logo.png"
-                alt="Império dos Pets"
-                width={150}
-                height={150}
-              />
+              <img src="/logo.png" alt="Império dos Pets" width={150} height={150} />
             </div>
             <div className="mt-4 md:mt-0">
               <p>&copy; 2025 Império dos Pets. Todos os direitos reservados.</p>

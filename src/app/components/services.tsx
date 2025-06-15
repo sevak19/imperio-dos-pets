@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Scissors, Syringe, Stethoscope, Bath, HeartPulse, BriefcaseMedical, House} from "lucide-react";
+import { Scissors, Syringe, Stethoscope, Bath, HeartPulse, BriefcaseMedical, House } from "lucide-react";
 import { LiaToothSolid } from "react-icons/lia";
 import Modal from "./modal";
 import ServiceCard from "./ServiceCard";
 
 const Services = () => {
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<{
     title: string;
@@ -25,79 +24,80 @@ const Services = () => {
   };
 
   return (
-    <div id="services" className="py-16 bg-customGreen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-          Nossos Serviços
+    <div id="services" className="py-20 bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <h2 className="text-4xl font-extrabold text-center text-purple-800 mb-14 drop-shadow">
+          🐾 Nossos Serviços 🐾
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <ServiceCard
-            icon={<Stethoscope className="h-8 w-8" />}
+            icon={<Stethoscope className="h-10 w-10 text-pink-600" />}
             title="Consultas"
-            description="Atendimento personalizado para diagnósticos precisos e tratamentos eficazes."
+            description="Atendimento personalizado para diagnósticos precisos e tratamentos eficazes."
             openModal={openModal}
             wpplink="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20agendar%20uma%20consulta."
             img="/dog1.png"
           />
           <ServiceCard
-            icon={<Scissors className="h-8 w-8" />}
+            icon={<Scissors className="h-10 w-10 text-rose-500" />}
             title="Banho e Tosa"
-            description="Cuidados estéticos e higiênicos para deixar seu pet sempre bonito e confortável."
+            description="Cuidados estéticos e higiênicos para deixar seu pet sempre bonito e confortável."
             openModal={openModal}
             wpplink="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Banho%20e%20Tosa."
             img="/cat1.png"
           />
           <ServiceCard
-            icon={<Syringe className="h-8 w-8" />}
+            icon={<Syringe className="h-10 w-10 text-indigo-500" />}
             title="Vacinação"
-            description="Proteção completa para prevenir doenças e manter seu pet saudável."
+            description="Proteção completa para prevenir doenças e manter seu pet saudável."
             openModal={openModal}
             wpplink="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Vacinação."
             img="/dog2.png"
           />
           <ServiceCard
-            icon={<Bath className="h-8 w-8" />}
+            icon={<Bath className="h-10 w-10 text-teal-500" />}
             title="Pet Shop"
-            description="Produtos e acessórios."
+            description="Produtos e acessórios para seu pet com muito amor e qualidade."
             openModal={openModal}
             wpplink="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20Produtos%20e%20Acessórios."
             img="/cat2.png"
           />
           <ServiceCard
-            icon={<LiaToothSolid className="h-8 w-8" />}
+            icon={<LiaToothSolid className="h-10 w-10 text-orange-500" />}
             title="Tartarectomia"
-            description="Limpeza e higiene dentária do seu pet."
+            description="Limpeza e higiene dentária para um sorriso saudável."
             openModal={openModal}
             wpplink="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Tartarectomia."
             img="/dog3.png"
           />
           <ServiceCard
-            icon={<HeartPulse className="h-8 w-8" />}
+            icon={<HeartPulse className="h-10 w-10 text-red-500" />}
             title="Cirurgia"
-            description="Procedimentos cirúrgicos seguros e realizados por profissionais experientes."
+            description="Procedimentos seguros com profissionais experientes e cuidadosos."
             openModal={openModal}
-            wpplink="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20Procedimentos%20Cirúrgicos."
+            wpplink="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20Procedimentos%20Cirúrgicos."
             img="/cat3.png"
           />
           <ServiceCard
-            icon={<House className="h-8 w-8" />}
+            icon={<House className="h-10 w-10 text-yellow-500" />}
             title="Creche"
-            description="Cuidado, diversão e socialização para o seu cãozinho."
+            description="Cuidado e diversão durante o dia para o seu pet brincar e socializar."
             openModal={openModal}
             wpplink="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Creche."
             img="/dog4.png"
           />
           <ServiceCard
-            icon={<BriefcaseMedical className="h-8 w-8" />}
+            icon={<BriefcaseMedical className="h-10 w-10 text-green-600" />}
             title="Farmácia Pet"
-            description="Medicamentos e suplementos de qualidade para a saúde do seu pet."
+            description="Medicamentos e suplementos de qualidade para o bem-estar do seu bichinho."
             openModal={openModal}
             wpplink="https://wa.me/553195306014?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Farmácia%20Pet."
             img="/cat4.png"
           />
         </div>
       </div>
-      {/* Modal */}
+
       {isModalOpen && modalContent && (
         <Modal
           title={modalContent.title}

@@ -1,12 +1,6 @@
 const GradientSeparator = () => {
   return (
-    <div
-      className="w-full h-12"
-      style={{
-        background: "linear-gradient(to left, #DCE4CC, #FFFFFF)",
-        boxShadow: "0 4px 10px rgba(220, 228, 204, 0.5)",
-      }}
-    />
+    <div className="w-full h-12 bg-gradient-to-br from-white via-purple-100 to-purple-200 shadow-md" />
   );
 };
 
